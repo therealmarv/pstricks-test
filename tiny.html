@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+        <script type="text/x-mathjax-config">
+            // <![CDATA[
+            MathJax.Hub.Config({ 
+                TeX: {extensions: ["AMSmath.js", "AMSsymbols.js"]},     
+                extensions: ["tex2jax.js"],
+                jax: ["input/TeX", "output/HTML-CSS"],
+                showProcessingMessages : false,
+                messageStyle : "none" ,
+                showMathMenu: false ,
+                tex2jax: {
+                    processEnvironments: true,
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    preview : "none",
+                    processEscapes: true
+                },
+                "HTML-CSS": { linebreaks: { automatic:true, width: "container"} }
+            });
+            // ]]>
+        </script>
+        <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mathjax" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full">
+
+
+                    MathJax.Hub.Register.StartupHook("End",function () {
+
+                        var TEX = new TeX({
+                            latex: $('[type="tex/latex"]').text()
+                        });
+
+                        TEX.render();
+                        $('#showtricks').html(TEX.el);
+
+                        
+
+                    });
+        </script>
+        <script type="text/javascript" src="http://latex2html5.com/latex2html5.min.js"></script>
+</head>
+<body>
+
+  <h2>PSTricks Examples</h2>
+ 
+  <p>some MathML:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow>
+  <mrow class="MJX-TeXAtom-ORD">
+    <mover>
+      <mi>p</mi>
+      <mo>⃗<!-- ⃗ --></mo>
+    </mover>
+  </mrow>
+  <mo>=</mo>
+  <mi>m</mi>
+  <mrow class="MJX-TeXAtom-ORD">
+    <mover>
+      <mi>v</mi>
+      <mo>⃗<!-- ⃗ --></mo>
+    </mover>
+  </mrow>
+</mrow><annotation encoding="math/tex">\vec{p}=m\vec{v}</annotation></semantics></math>
+
+<p>some PSTricks mostly copied from Momentum chapter</p>
+<!-- show rendered PSTricks here -->
+<div id="showtricks"></div>
+
+<!-- PSTricks raw data -->
+<script type="tex/latex">
+
+\psset{unit=0.5cm}
+\begin{center}
+\begin{pspicture}(0,3)(9,5)
+\psline[linecolor=orange]{->}(2,4)(6,4)
+\uput[u](4,4){$\vec{p}_i$}
+\pscircle[fillcolor=yellow!80!black,fillstyle=solid](2,4){0.9}
+\psframe[fillcolor=gray,fillstyle=solid,linecolor=gray!40!black](7,4.75)(7.5,3.25)
+\end{pspicture}
+\end{center}
+
+Code:
+\begin{verbatim}
+(0,3)(9,5)
+\psline[linecolor=orange]{->}(2,4)(6,4)
+\uput[u](4,4){$\vec{p}_i$}
+\pscircle[fillcolor=yellow!80!black,fillstyle=solid](2,4){0.9}
+\psframe[fillcolor=gray,fillstyle=solid,linecolor=gray!40!black](7,4.75)(7.5,3.25)
+\end{verbatim}
+
+</script>
+
+<br>
+
+<p>what it should look like:</p>
+
+<img src="shouldlooklike.png"></img>
+
+<br><br><br><br><br>
+
+<a href="http://latex2html5.com/">More info at latex2html5.com</a>
+
+</body>
+</html>
